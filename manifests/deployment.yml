@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: haiderimransmicorservicesdemo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: haiderimransmicorservicesdemo
+  template:
+    metadata:
+      labels:
+        app: haiderimransmicorservicesdemo 
+    spec:
+      containers:
+        - name: haiderimransmicorservicesdemo 
+          image: spydebergcluster.azurecr.io/haiderimransmicorservicesdemo
+          ports:
+          - containerPort: 80
